@@ -79,6 +79,11 @@ jobs:
           make diffconfig
           make package/compile -j$(nproc) IGNORE_ERRORS=1 || make package/compile -j1 V=s IGNORE_ERRORS=1
           make package/index
+          echo "::set-output name=status::success"
+          
+      - name: Set Environment Variable
+        if: steps.compile.outputs.status == 'success'
+        run: |          
           cd $OPENWRTROOT/bin/packages/*
           PLATFORM=$(basename `pwd`)
           echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
