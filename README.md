@@ -52,7 +52,7 @@ Restart netowrk:
 
 Now you can use OpenWrt's IP address to access the control panel via browser. Default account: ```root```, password: ```password```
 
-### Thanks
+## Thanks
 
 SuLingGG/OpenWrt-Docker:
 
@@ -62,14 +62,11 @@ P3TERX/Actions-OpenWrt:
 
 <https://github.com/P3TERX/Actions-OpenWrt>
 
-OpenWrt Source Repository:
-
-<https://github.com/openwrt/openwrt/>
-
 Lean's OpenWrt source:
 
 <https://github.com/coolsnowwolf/lede>
 
-CTCGFW's Team:
+OpenWrt Source Repository:
 
-<https://github.com/project-openwrt>
+<https://github.com/openwrt/openwrt/>
+
