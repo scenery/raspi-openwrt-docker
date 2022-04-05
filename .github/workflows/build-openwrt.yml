@@ -12,7 +12,6 @@ env:
   REPO_BRANCH: master
   CONFIG_FILE: config/rpi4-lean-openwrt.config
   DEVICE: openwrt-bcm27xx-bcm2711-rpi-4
-  DIY_SH: scripts/lean-openwrt.sh
   TZ: Asia/Shanghai
 
 jobs:
@@ -58,7 +57,8 @@ jobs:
           [ -e files ] && mv files $OPENWRTROOT/files
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRTROOT/.config
           cd $OPENWRTROOT
-          ../$DIY_SH
+          ../scripts/lean-openwrt.sh
+          ../scripts/preset-terminal-tools.sh
 
       - name: Download Package
         id: package
