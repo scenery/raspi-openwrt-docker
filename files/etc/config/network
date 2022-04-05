@@ -6,7 +6,6 @@ config interface 'loopback'
 	option netmask '255.0.0.0'
 
 config globals 'globals'
-	option ula_prefix 'fd7d:334c:6108::/48'
 
 config interface 'lan'
 	option type 'bridge'
