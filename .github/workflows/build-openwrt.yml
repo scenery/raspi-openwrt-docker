@@ -45,6 +45,7 @@ jobs:
           cd openwrt
           chmod +x ../scripts/*.sh
           echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
+          ../scripts/lean-openwrt.sh
           ./scripts/feeds update -a
           
       - name: Install Feeds
@@ -56,8 +57,6 @@ jobs:
         run: |
           [ -e files ] && mv files $OPENWRTROOT/files
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRTROOT/.config
-          cd $OPENWRTROOT
-          ../scripts/lean-openwrt.sh
 
       - name: Download Package
         id: package
