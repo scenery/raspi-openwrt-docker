@@ -58,7 +58,6 @@ jobs:
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRTROOT/.config
           cd $OPENWRTROOT
           ../scripts/lean-openwrt.sh
-          ../scripts/preset-terminal-tools.sh
 
       - name: Download Package
         id: package
