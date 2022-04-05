@@ -1,0 +1,8 @@
+#!/bin/bash
+# Description: This script will be executed during the first boot
+# https://openwrt.org/docs/guide-developer/uci-defaults
+
+# Set default theme to luci-theme-argon
+uci set luci.main.mediaurlbase='/luci-static/argon'
+
+exit 0
