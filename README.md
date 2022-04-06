@@ -1,8 +1,8 @@
 # Raspberry Pi OpenWrt Docker
 
-This repository is used to build custom OpenWrt Docker Images for **Raspberry Pi 4B**. 
+This repository is used to build OpenWrt Docker Images for **Raspberry Pi 4B** (bcm27xx/bcm2711) with GitHub Actions. 
 
-**Notice:** *Only keep the packages for personal needs that means this Docker Image is not suitable for everyone.*
+**Notice:** *Only keep the packages for personal needs that means this Docker Image is not suitable for everyone, but you can edit the ```config/rpi4-lean-openwrt.config``` file to suit your needs.*
 
 ## Installation
 
