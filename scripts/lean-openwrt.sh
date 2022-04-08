@@ -11,9 +11,11 @@
 pushd package/lean
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld
-
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+# Add luci-app-smartdns
+git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns
+
 popd
 
 # Clone community packages to package/community
