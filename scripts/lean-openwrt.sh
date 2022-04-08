@@ -8,9 +8,13 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
-# Add luci-app-ssr-plus
 pushd package/lean
-git clone --depth=1 https://github.com/fw876/helloworld
+# Add luci-app-ssr-plus
+# git clone --depth=1 https://github.com/fw876/helloworld
+
+# Add kenzok8/openwrt-packages
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages
+git clone --depth=1 https://github.com/kenzok8/small
 popd
 
 # Clone community packages to package/community
