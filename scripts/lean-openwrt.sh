@@ -10,11 +10,10 @@
 
 pushd package/lean
 # Add luci-app-ssr-plus
-# git clone --depth=1 https://github.com/fw876/helloworld
+git clone --depth=1 https://github.com/fw876/helloworld
 
-# Add kenzok8/openwrt-packages
-git clone --depth=1 https://github.com/kenzok8/openwrt-packages
-git clone --depth=1 https://github.com/kenzok8/small
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 popd
 
 # Clone community packages to package/community
