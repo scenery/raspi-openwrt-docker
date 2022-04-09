@@ -106,11 +106,22 @@ jobs:
           make package/install -j$(nproc) || make package/install -j1 V=s
           make target/install -j$(nproc) || make target/install -j1 V=s
           make checksum
+          cp bin/targets/$TARGET/$SUBTARGET/*rootfs.tar.gz $OPENWRTROOT
           echo "::set-output name=status::success"
+        
+      - name: Login to DockerHub
+        if: steps.generate.outputs.status == 'success'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PWD }}
+          
+      - name: Build and Push Docker Image
+        if: steps.generate.outputs.status == 'success'
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm64
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/openwrt-rpi:latest
 
-      - name: Build & Upload to Dockerhub
-        run: |
-          cd openwrt/bin/targets/$TARGET/$SUBTARGET/
-          docker import $DEVICE-rootfs.tar.gz ${{ secrets.DOCKER_HUB_USERNAME }}/openwrt-rpi:latest
-          docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PWD }}
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/openwrt-rpi:latest
